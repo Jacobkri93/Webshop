@@ -2,17 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<!--    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm” crossorigin=”anonymous”>-->
+
     <title>Webshop</title>
 </head>
 <body>
-<div>
-    <h1>Product list</h1>
-
+<section class="container">
+    <h1>Vareliste</h1>
+    <!-- varetabel -->
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
+            <th scope="col">Varenavn</th>
+            <th scope="col">Pris</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -21,12 +26,14 @@
         <tr th:each="product : ${products}" scope="row">
             <td th:text="${product.name}">kaffe</td>
             <td th:text="${product.price}">35</td>
-            <td><a th:href="@{'/update/' + ${product.id}}" class="btn btn-warning">Update</a></td>
-            <td><a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger">Delete</a></td>
+            <td><a th:href="@{'/update/' + ${product.id}}" class="btn btn-warning">opdater</a></td>
+            <td><a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger">slet</a></td>
         </tr>
         </tbody>
+
     </table>
-    <a href="create">Create Product</a>
-</div>
+
+    <a href="create" class="btn btn-primary">Opret produkt</a>
+</section>
 </body>
 </html>
