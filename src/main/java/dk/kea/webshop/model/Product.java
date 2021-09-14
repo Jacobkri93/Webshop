@@ -1,7 +1,5 @@
 package dk.kea.webshop.model;
 
-import javax.persistence.Entity;
-
 
 public class Product {
 
